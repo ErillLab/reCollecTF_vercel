@@ -5,14 +5,14 @@ import {parse} from 'cookie';
 
 const JWT_SECRET = process.env.JWT_SECRET!;
 const BOT_TOKEN = process.env.BOT_TOKEN!;
-const REPO_OWNER = 'Milegoo';
-const REPO_NAME = 'CollecTF';
+const REPO_OWNER = 'ErillLab';
+const REPO_NAME = 'reCollecTF';
 const WORKFLOW_FILE_NAME = 'update-db.yml';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     //0 - Allow CORS and verify POST
-    const origin = "https://milegoo.github.io" //change in dev
+    const origin = "https://erilllab.github.io" //change in dev
 
     res.setHeader("Access-Control-Allow-Origin", origin); // to be changed in prod
     res.setHeader("Access-Control-Allow-Credentials", "true");
