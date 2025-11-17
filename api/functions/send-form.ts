@@ -12,20 +12,9 @@ const WORKFLOW_FILE_NAME = 'update-db.yml';
 export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     //0 - Allow CORS and verify POST
-    // Allow both student page and lab page
-    const allowedOrigins = [
-      "https://niu1636242.github.io",
-      "https://erilllab.github.io"
-    ];
+    const origin = "https://erilllab.github.io" //change in dev
 
-    const origin = req.headers.origin || "";
-
-    if (allowedOrigins.includes(origin)) {
-      res.setHeader("Access-Control-Allow-Origin", origin);
-    }
-    //const origin = "https://erilllab.github.io" //change in dev
-
-    //res.setHeader("Access-Control-Allow-Origin", origin); // to be changed in prod
+    res.setHeader("Access-Control-Allow-Origin", origin); // to be changed in prod
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
