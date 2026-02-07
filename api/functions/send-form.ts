@@ -71,8 +71,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         );
 
         return res.status(200).json({ message: 'Workflow dispatched' });
-    } catch (err) {
-        console.error('Error dispatching:', err.response?.data || err.message);
-        return res.status(500).json({ error: 'Error dispatching workflow' });
+    } catch (err: any) {
+          const status = err.response?.status || 500;
+          const data = err.response?.data || { message: err.message };
+          console.error("Error dispatching:", status, data);
+          return res.status(status).json({ error: "Dispatch failed", details: data });
     }
 }
