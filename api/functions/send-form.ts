@@ -75,6 +75,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           const status = err.response?.status || 500;
           const data = err.response?.data || { message: err.message };
           console.error("Error dispatching:", status, data);
-          return res.status(status).json({ error: "Dispatch failed", details: data });
+          return res.status(500).json({ error: "SEND-FORM ERROR" });
     }
 }
