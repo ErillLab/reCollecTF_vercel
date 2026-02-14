@@ -14,7 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     //Debug
     if (req.method === "GET") {
-        return res.status(200).json({ whoami: "SEND-FORM MIGUEL" });
+        return res.status(200).json({ whoami: "SEND-FORM MIGUEL." });
     }
 
     //0 - Allow CORS and verify POST
