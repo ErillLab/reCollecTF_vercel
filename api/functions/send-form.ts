@@ -34,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
 
     if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Only POST allowed' });
+        return res.status(405).json({ error: 'Only POST allowed.' });
     }
 
     //1 - Verify JWT token from cookies
