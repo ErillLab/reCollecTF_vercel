@@ -58,7 +58,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     console.log("Inputs: ", inputs);
 
-    // NEW: write SQL to a file in the repo and dispatch workflow with sql_path (avoid huge workflow_dispatch inputs)
     const sqlString = String(inputs?.queries || '');
     if (!sqlString.trim()) {
         return res.status(400).json({ error: 'Missing inputs.queries (SQL string)' });
