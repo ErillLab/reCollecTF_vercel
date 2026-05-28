@@ -13,7 +13,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     //1 - Allow CORS
     console.log("Setting CORS Policy...");
-    const origin = "https://erilllab.github.io" //change in dev
+    const origin = "https://collectf.org" //change in dev
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
