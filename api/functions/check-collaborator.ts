@@ -56,6 +56,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const username = payload.username;
 
     console.log("UserName: ", username);
+    console.log("URL: ", `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/collaborators/${username}`);
     
 
     //3 - Check if user is a collaborator
