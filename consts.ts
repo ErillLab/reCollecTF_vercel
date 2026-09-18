@@ -4,4 +4,4 @@
 
 // To change before merge to prod
 export const originConstGlobal = "https://collectf.org";
-const REPO_OWNER_GLOBAL  = "ErillLab";
+export const REPO_OWNER_GLOBAL  = "ErillLab";
