@@ -1,4 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
+import { originConstGlobal, REPO_OWNER_GLOBAL } from '../../consts';
 import { verify } from 'jsonwebtoken';
 import axios from 'axios';
 import { parse } from 'cookie';
@@ -6,14 +7,16 @@ import { use } from 'react';
 
 const BOT_TOKEN = process.env.BOT_TOKEN!;
 const JWT_SECRET = process.env.JWT_SECRET!;
-const REPO_OWNER = 'ErillLab';
+const REPO_OWNER = REPO_OWNER_GLOBAL;
 const REPO_NAME = 'reCollecTF';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     //1 - Allow CORS
     console.log("Setting CORS Policy...");
-    const origin = "https://collectf.org" //change in dev
+
+    const origin = originConstGlobal;
+
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
